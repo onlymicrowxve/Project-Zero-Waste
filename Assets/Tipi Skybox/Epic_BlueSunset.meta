@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Tipi Skybox/Epic_BlueSunset.meta
 guid: 6eb09a1750d2d4f609c0e79b804a9f3e
 folderAsset: yes
 timeCreated: 1557584424
+========
+guid: edfd7568a47754e23b20068c1847c5fb
+folderAsset: yes
+timeCreated: 1557585935
+>>>>>>>> origin/main:Assets/Tipi Skybox/Cartoon Base NightSky.meta
 licenseType: Store
 DefaultImporter:
   userData: 
