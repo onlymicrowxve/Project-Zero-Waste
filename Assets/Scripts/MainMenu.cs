@@ -37,4 +37,9 @@ public class MainMenu : MonoBehaviour
         optionsMenuPanel.SetActive(false); 
         mainMenuPanel.SetActive(true);     
     }
+    
+    public void PlayerInitialHouse()
+    {
+        SceneManager.LoadScene("Interno Casa");
+    }
 }
