@@ -1,4 +1,4 @@
-### Project Zero Waste
+# Project Zero Waste
 Gioco per concorso Informatica Università di Camerino.
 
 ## Trama
@@ -9,4 +9,4 @@ Durante l'inaugurazione della nuova era Nexus, un evento catastrofico colpisce i
 Max, il protagonista e nipote del co-fondatore originale ed etico della Nexus, scopre in soffitta l'unica speranza rimasta: un prototipo dimenticato inventato da suo nonno. Si tratta del Chroma, un dispositivo capace di restituire il colore alle cose e alle menti.
 
 
-# Developed by Better Call Unity
+### Developed by Better Call Unity
