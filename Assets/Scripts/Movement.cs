@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     public CharacterController controller;
     public float walkSpeed = 6f;
     public float runSpeed = 12f;
-    public float crouchSpeed = 3f;
+    public KeyCode runKey = KeyCode.LeftShift;
 
     [Header("Impostazioni Stamina")]
     public Slider staminaSlider;
@@ -23,16 +23,6 @@ public class Movement : MonoBehaviour
     public float gravity = -19.62f;
     public float jumpHeight = 3f;
 
-    [Header("Impostazioni Crouch")]
-    public Transform playerCamera;
-    public float normalHeight = 2f;
-    public float crouchHeight = 1f;
-    public float camStandY = 1.6f; 
-    public float camCrouchY = 0.8f;
-    public KeyCode crouchKey = KeyCode.LeftControl;
-    public KeyCode runKey = KeyCode.LeftShift;
-    public Transform ceilingCheck;
-
     [Header("Controllo Terreno")]
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -40,7 +30,6 @@ public class Movement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
-    bool isCrouching = false;
     float currentSpeed;
 
     void Start()
@@ -55,7 +44,6 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (playerCamera == null) return;
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0) velocity.y = -2f;
@@ -68,12 +56,8 @@ public class Movement : MonoBehaviour
         if (currentStamina <= 0) canRun = false;
         else if (currentStamina >= minStaminaToRun) canRun = true;
 
-        if (isCrouching)
-        {
-            currentSpeed = crouchSpeed;
-            RegenStamina();
-        }
-        else if (Input.GetKey(runKey) && isMoving && canRun)
+        // Corsa o Camminata
+        if (Input.GetKey(runKey) && isMoving && canRun)
         {
             currentSpeed = runSpeed;
             currentStamina -= staminaDrain * Time.deltaTime;
@@ -87,24 +71,9 @@ public class Movement : MonoBehaviour
         currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
         if (staminaSlider != null) staminaSlider.value = currentStamina;
 
-        if (Input.GetKeyDown(crouchKey)) 
-            StartCrouch();
-        if (Input.GetKeyUp(crouchKey)) 
-            StopCrouch();
-
-        if (playerCamera != null)
-        {
-
-            float targetY = isCrouching ? camCrouchY : camStandY;
-
-            Vector3 camPos = playerCamera.localPosition;
-            camPos.y = Mathf.Lerp(camPos.y, targetY, 10f * Time.deltaTime);
-            playerCamera.localPosition = camPos;
-        }
-
         controller.Move(move * currentSpeed * Time.deltaTime);
 
-        if (Input.GetButtonDown("Jump") && isGrounded && !isCrouching)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
@@ -117,22 +86,5 @@ public class Movement : MonoBehaviour
     {
         if (currentStamina < maxStamina)
             currentStamina += staminaRegen * Time.deltaTime;
-    }
-
-    void StartCrouch()
-    {
-        controller.height = crouchHeight;
-        controller.center = new Vector3(0, -0.5f, 0);
-        isCrouching = true;
-    }
-
-    void StopCrouch()
-    {
-        if (!Physics.Raycast(ceilingCheck.position, Vector3.up, 1.5f))
-        {
-            controller.height = normalHeight;
-            controller.center = Vector3.zero; 
-            isCrouching = false;
-        }
     }
 }

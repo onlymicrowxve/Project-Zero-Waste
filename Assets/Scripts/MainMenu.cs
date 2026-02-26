@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame()
     {
-        SceneManager.LoadScene("Città di Prova per tutto quanto");
+        SceneManager.LoadScene("Interno Casa");
     }
 
     public void QuitGame()
@@ -38,8 +38,8 @@ public class MainMenu : MonoBehaviour
         mainMenuPanel.SetActive(true);     
     }
     
-    public void PlayerInitialHouse()
+    public void LoadCittà()
     {
-        SceneManager.LoadScene("Interno Casa");
+        SceneManager.LoadScene("Città");
     }
 }

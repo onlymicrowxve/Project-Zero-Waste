@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Interno Casa.unity
     guid: f3bbebea1a7b37148821dd33c37d87f2
   - enabled: 1
-    path: Assets/Scenes/Citta 2.unity
+    path: "Assets/Scenes/Citt\xE0.unity"
     guid: cc02cee417eaed04889d58aec6802419
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

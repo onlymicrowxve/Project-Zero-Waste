@@ -9,6 +9,7 @@ TagManager:
   - ArmaDaTerra
   - Ammo
   - Teleport
+  - NPC
   layers:
   - Default
   - TransparentFX
