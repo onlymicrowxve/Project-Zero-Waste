@@ -2,11 +2,9 @@
 Gioco per concorso Informatica Università di Camerino.
 
 ## Trama
-La Nexus Industries era il simbolo del progresso globale: tecnologie avanzate per il benessere di tutti. Ma sotto la guida di un nuovo ed enigmatico CEO, l'azienda ha cambiato volto, puntando al controllo totale.
-
-Durante l'inaugurazione della nuova era Nexus, un evento catastrofico colpisce il mondo: i colori svaniscono. Il cielo diventa grigio, la natura muore e le persone perdono emozioni e volontà, trasformandosi in gusci apatici. È il piano finale di Nexus: assorbire l'energia cromatica del pianeta per alimentare le proprie macchine.
-
-Max, il protagonista e nipote del co-fondatore originale ed etico della Nexus, scopre in soffitta l'unica speranza rimasta: un prototipo dimenticato inventato da suo nonno. Si tratta del Chroma, un dispositivo capace di restituire il colore alle cose e alle menti.
-
+La Nexus Industries, guidata da un nuovo e spietato leader, sta prosciugando i colori della Terra per alimentare un esodo spaziale riservato a pochi eletti. 
+Senza colori, l'umanità perde le emozioni e la volontà di ribellarsi, controllata a vista da letali robot monocromatici. 
+Tutto cambia quando scopri in cantina il segreto di tuo nonno, co-fondatore pentito della Nexus: un dispositivo rivoluzionario che non distrugge, ma diffonde colore e vita. Impugna quest'arma per farti strada in una metropoli opprimente, neutralizzare i droni nemici e risvegliare le coscienze dei cittadini. 
+Raggiungi il cuore della corporazione, riprogramma l'Intelligenza Artificiale centrale e dimostra che il nostro pianeta non va abbandonato, ma salvato in un'esplosione di luce.
 
 ### Developed by Better Call Unity
