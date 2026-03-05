@@ -56,7 +56,6 @@ public class Movement : MonoBehaviour
         if (currentStamina <= 0) canRun = false;
         else if (currentStamina >= minStaminaToRun) canRun = true;
 
-        // Corsa o Camminata
         if (Input.GetKey(runKey) && isMoving && canRun)
         {
             currentSpeed = runSpeed;

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems; 
 
 public class ColorWeapon : MonoBehaviour
 {
@@ -42,6 +43,11 @@ public class ColorWeapon : MonoBehaviour
         {
             ammoText.gameObject.SetActive(true);
         }
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
+            return; 
+        }
+
         if (Input.GetMouseButton(0) && Time.time >= nextTimeToFire)
         {
             if (currentAmmo > 0)
@@ -90,6 +96,7 @@ public class ColorWeapon : MonoBehaviour
         
         UpdateAmmoUI();
     }
+    
     void UpdateAmmoUI()
     {
         if (ammoText != null)

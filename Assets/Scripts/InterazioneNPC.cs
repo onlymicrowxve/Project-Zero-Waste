@@ -7,11 +7,15 @@ public class InterazioneNPC : MonoBehaviour
 
     [Header("Trascina qui la UI")]
     public GameObject pannelloDialogo; 
-    public TextMeshProUGUI testoSchermo;          
+    public TextMeshProUGUI testoSchermo;    
+
+    [Header("Riferimenti")]
+    public GameObject hand;      
 
     [Header("Script da bloccare")]
     public MonoBehaviour scriptMovimento;
     public MonoBehaviour scriptTelecamera;
+    public MonoBehaviour scriptRaccogliOggetti;
 
     private bool stoParlando = false;
 
@@ -22,6 +26,7 @@ public class InterazioneNPC : MonoBehaviour
 
     void Update()
     {
+
         if (stoParlando)
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E))
@@ -31,6 +36,13 @@ public class InterazioneNPC : MonoBehaviour
 
                 if (scriptMovimento != null) scriptMovimento.enabled = true;
                 if (scriptTelecamera != null) scriptTelecamera.enabled = true;
+                if (scriptRaccogliOggetti != null) scriptRaccogliOggetti.enabled = true;
+
+                if (hand != null)
+                {
+                    ColorWeapon arma = hand.GetComponentInChildren<ColorWeapon>();
+                    if (arma != null) arma.enabled = true;
+                }
             }
             return; 
         }
@@ -49,6 +61,13 @@ public class InterazioneNPC : MonoBehaviour
 
                     if (scriptMovimento != null) scriptMovimento.enabled = false;
                     if (scriptTelecamera != null) scriptTelecamera.enabled = false;
+                    if (scriptRaccogliOggetti != null) scriptRaccogliOggetti.enabled = false;
+
+                    if (hand != null)
+                    {
+                        ColorWeapon arma = hand.GetComponentInChildren<ColorWeapon>();
+                        if (arma != null) arma.enabled = false;
+                    }
                 }
             }
         }
