@@ -60,6 +60,9 @@ public class PaintBullet : MonoBehaviour
                 Debug.LogError("PAINTBULLET: tag Robot trovato ma RobotAI NON trovato su " + target.name);
             }
         }
+         GeneratoreMinore generatore = target.GetComponent<GeneratoreMinore>();
+        if (generatore == null) generatore = target.GetComponentInParent<GeneratoreMinore>();
+        if (generatore != null) { generatore.RiceviColore(); return; }
 
         NexusAntenna antenna = target.GetComponent<NexusAntenna>();
         if (antenna == null) antenna = target.GetComponentInParent<NexusAntenna>();
